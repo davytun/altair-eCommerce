@@ -15,11 +15,16 @@ export function Hero({ cta, description, headline, image, name, showMediaPlaceho
     <section className="hero-section" aria-labelledby="hero-title">
       <Container className="hero-grid">
         <div className="hero-copy">
-          <p className="eyebrow">{name}</p>
+          <p className="hero-kicker">{name}</p>
           <h1 id="hero-title" className="type-display mt-4">{headline}</h1>
           <p className="type-lead mt-5">{description}</p>
+          <div className="hero-feature-row" aria-label="Demo product highlights">
+            <span>Rechargeable</span>
+            <span>Ambient light</span>
+            <span>Desk or wall</span>
+          </div>
           {cta && (
-            <a className="button-base button-primary mt-8" href={cta.href}>
+            <a className="sales-cta mt-8" href={cta.href}>
               {cta.label}
             </a>
           )}

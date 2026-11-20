@@ -13,8 +13,9 @@ export function Faq({ faqs }: FaqProps) {
   return (
     <Section aria-labelledby="faq-title">
       <div className="max-w-4xl">
-        <p className="eyebrow">Questions and answers</p>
-        <h2 id="faq-title" className="type-heading mt-3">Practical details, clearly answered.</h2>
+        <div className="sales-title-bar">
+          <h2 id="faq-title">Frequently asked questions</h2>
+        </div>
         <div className="faq-list mt-8">
           {faqs.map((faq) => (
             <details key={faq.question}>

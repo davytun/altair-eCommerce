@@ -9,16 +9,13 @@ type PageShellProps = PropsWithChildren<{
 export function PageShell({ children, productName, productSlug }: PageShellProps) {
   return (
     <div className="min-h-svh bg-[var(--page-canvas)] text-[var(--page-ink)]">
-      <a className="skip-link" href="#main-content">
-        Skip to page content
-      </a>
-      <header className="border-b border-black/10 bg-[var(--page-canvas)]">
-        <Container className="flex min-h-14 items-center justify-between gap-4 py-3">
-          <span className="text-sm font-black tracking-tight">FlexShop</span>
-          <span className="max-w-[55%] truncate text-right text-xs font-semibold text-[var(--page-muted)]">
-            {productName} · {productSlug}
-          </span>
+      <a className="skip-link" href="#main-content">Skip to page content</a>
+      <header className="sales-header">
+        <Container className="sales-header-inner">
+          <span className="sales-brand">UCAGA</span>
+          <span className="sales-product-label">{productName} / {productSlug}</span>
         </Container>
+        <div className="sales-offer-strip">Demo sales page • Complete landing-page flow • No live orders</div>
       </header>
       {children}
     </div>

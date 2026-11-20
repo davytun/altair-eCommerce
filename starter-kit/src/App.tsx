@@ -5,7 +5,11 @@ import { CtaSection } from './components/sections/CtaSection'
 import { Demonstration } from './components/sections/Demonstration'
 import { Faq } from './components/sections/Faq'
 import { Hero } from './components/sections/Hero'
+import { IncludedItems } from './components/sections/IncludedItems'
+import { OfferSummary } from './components/sections/OfferSummary'
+import { OrderJourney } from './components/sections/OrderJourney'
 import { ProductGallery } from './components/sections/ProductGallery'
+import { SalesFooter } from './components/sections/SalesFooter'
 import { Testimonials } from './components/sections/Testimonials'
 import { VideoDemo } from './components/sections/VideoDemo'
 import { product } from './config/product'
@@ -63,14 +67,16 @@ function App() {
           {isSectionVisible(product, 'gallery') && (
             <ProductGallery images={product.media.gallery} showMediaPlaceholder={showDemoNotice} />
           )}
+          <IncludedItems items={product.content.included ?? []} />
           {isSectionVisible(product, 'benefits') && <Benefits benefits={product.content.benefits ?? []} />}
           {isSectionVisible(product, 'demonstration') && <Demonstration steps={product.content.demoSteps ?? []} />}
           {isSectionVisible(product, 'video') && (
             <VideoDemo showMediaPlaceholder={showDemoNotice} video={product.content.video} />
           )}
           {isSectionVisible(product, 'testimonials') && <Testimonials testimonials={product.content.testimonials ?? []} />}
-          {isSectionVisible(product, 'faq') && <Faq faqs={product.content.faqs ?? []} />}
           {isSectionVisible(product, 'cta') && <CtaSection cta={product.content.cta} />}
+          <OrderJourney steps={product.content.orderSteps ?? []} />
+          <OfferSummary offers={product.offers} />
           {isSectionVisible(product, 'orderForm') && (
             <OrderForm
               offers={product.offers}
@@ -78,7 +84,10 @@ function App() {
               onSubmit={usesDevelopmentMocks ? submitDevelopmentMock : undefined}
             />
           )}
+          {isSectionVisible(product, 'faq') && <Faq faqs={product.content.faqs ?? []} />}
         </main>
+        <SalesFooter />
+        <a className="mobile-order-cta" href="#order-form">View demo order form</a>
       </PageShell>
     </div>
   )

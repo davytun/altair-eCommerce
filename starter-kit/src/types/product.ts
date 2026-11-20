@@ -28,6 +28,11 @@ export type ProductDemoStep = {
   title: string
 }
 
+export type ProductOrderStep = {
+  description: string
+  title: string
+}
+
 export type ProductVideo = {
   poster?: string
   src: string
@@ -59,6 +64,8 @@ export type ProductContent = {
   description: string
   faqs?: ProductFaq[]
   headline: string
+  included?: string[]
+  orderSteps?: ProductOrderStep[]
   testimonials?: ProductTestimonial[]
   video?: ProductVideo
 }

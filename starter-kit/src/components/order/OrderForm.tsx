@@ -90,9 +90,15 @@ export function OrderForm({ offers, onDraftChange, onSubmit }: OrderFormProps) {
   return (
     <section className="order-section" id="order-form" aria-labelledby="order-form-title">
       <div className="container-content max-w-2xl">
-        <p className="eyebrow">Order details</p>
-        <h2 className="type-heading mt-3" id="order-form-title">Choose an offer and share your delivery details.</h2>
-        <p className="type-body mt-4">Required fields are marked with an asterisk.</p>
+        <div className="order-warning">
+          <strong>Demo form only</strong>
+          <span>No live order will be created from this packaged demonstration.</span>
+        </div>
+        <div className="sales-section-heading order-heading">
+          <span>Order details</span>
+          <h2 id="order-form-title">Choose an offer and enter delivery details</h2>
+          <p>Required fields are marked with an asterisk.</p>
+        </div>
 
         <form className="order-form mt-8" noValidate onSubmit={handleSubmit}>
           <OfferSelector

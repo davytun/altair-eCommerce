@@ -6,7 +6,7 @@ type DemonstrationProps = {
   title?: string
 }
 
-export function Demonstration({ steps, title = 'How it works' }: DemonstrationProps) {
+export function Demonstration({ steps, title = 'See how it fits into your space' }: DemonstrationProps) {
   if (steps.length === 0) {
     return null
   }
@@ -14,8 +14,9 @@ export function Demonstration({ steps, title = 'How it works' }: DemonstrationPr
   return (
     <Section aria-labelledby="demonstration-title">
       <div className="max-w-5xl">
-        <p className="eyebrow">Demonstration</p>
-        <h2 id="demonstration-title" className="type-heading mt-3">{title}</h2>
+        <div className="sales-title-bar">
+          <h2 id="demonstration-title">{title}</h2>
+        </div>
         <ol className="demo-list mt-8">
           {steps.map((step, index) => (
             <li key={step.title}>

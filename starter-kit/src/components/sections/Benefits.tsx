@@ -6,7 +6,7 @@ type BenefitsProps = {
   title?: string
 }
 
-export function Benefits({ benefits, title = 'Why it matters' }: BenefitsProps) {
+export function Benefits({ benefits, title = "Why you'll love this diffuser" }: BenefitsProps) {
   if (benefits.length === 0) {
     return null
   }
@@ -14,8 +14,9 @@ export function Benefits({ benefits, title = 'Why it matters' }: BenefitsProps) 
   return (
     <Section tone="surface" aria-labelledby="benefits-title">
       <div className="max-w-4xl">
-        <p className="eyebrow">Benefits</p>
-        <h2 id="benefits-title" className="type-heading mt-3">{title}</h2>
+        <div className="sales-title-bar">
+          <h2 id="benefits-title">{title}</h2>
+        </div>
         <ul className="benefit-list mt-8">
           {benefits.map((benefit, index) => (
             <li key={benefit.title}>

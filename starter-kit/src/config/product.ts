@@ -1,75 +1,148 @@
+import bedroomImage from '../assets/demo-diffuser/bedroom.png'
+import heroImage from '../assets/demo-diffuser/hero.png'
+import wallMountImage from '../assets/demo-diffuser/wall-mount-v2.png'
 import type { ProductConfig } from '../types/product'
 
 /**
- * Temporary demo content for reviewing the complete reusable sales page.
- * Replace this configuration with approved product content before launch.
+ * Product-specific demonstration content for reviewing the complete sales page.
+ * Replace all copy, IDs, prices and media with approved content before launch.
  */
 export const product: ProductConfig = {
   identity: {
-    name: 'UCAGA Demo Product',
-    slug: 'ucaga-demo',
+    name: 'Rechargeable Aroma Diffuser',
+    slug: 'ucaga-diffuser-demo',
   },
   content: {
-    headline: 'A complete sales-page demo, ready for your real product details.',
+    headline: 'Rechargeable aroma diffuser for bedrooms, offices and living spaces',
     description:
-      'This is temporary demonstration content so you can inspect the full landing-page flow. Replace it with approved UCAGA product information before any customer-facing launch.',
+      'A compact demo product with soft ambient light, a visible fragrance reservoir and flexible desk or wall placement.',
+    included: [
+      '1 rechargeable diffuser unit',
+      '1 demonstration fragrance bottle',
+      '1 transparent wall bracket',
+      '1 charging cable',
+      '1 demonstration user guide',
+    ],
     benefits: [
       {
-        title: 'Clear product story',
-        description: 'Show a concise explanation of the product, its use, and its approved customer benefit.',
+        title: 'Rechargeable design',
+        description: 'Place it where you need it without building the page around a permanent wall socket.',
       },
       {
-        title: 'Flexible offer display',
-        description: 'Present single and bundle offers in one reusable, responsive ordering flow.',
+        title: 'Visible fragrance reservoir',
+        description: 'The clear centre makes the product and remaining liquid easy to see at a glance.',
       },
       {
-        title: 'Delivery-first checkout',
-        description: 'Collect customer delivery details without showing unverified payment or delivery promises.',
+        title: 'Desk or wall placement',
+        description: 'Show the product standing on a surface or attached with the illustrated adhesive bracket.',
       },
     ],
     demoSteps: [
       {
-        title: 'Show the product clearly',
-        description: 'Replace this step with an approved product image or video demonstration.',
+        title: 'Use it in your everyday spaces',
+        description: 'Bedroom, office and lounge imagery helps customers understand the size and visual effect.',
+        image: {
+          alt: 'Demo rechargeable diffuser glowing on a bedside table',
+          src: bedroomImage,
+        },
       },
       {
-        title: 'Explain the practical use',
-        description: 'Use approved instructions to show how the real product fits into a customer routine.',
+        title: 'Keep it on a table',
+        description: 'The upright body and compact footprint are shown clearly in the main product photograph.',
+        image: {
+          alt: 'Demo rechargeable diffuser on a wooden side table',
+          src: heroImage,
+        },
       },
       {
-        title: 'Set accurate expectations',
-        description: 'Describe only the checked result, delivery terms, and contents of the actual offer.',
+        title: 'Or mount it on the wall',
+        description: 'A separate feature visual shows the transparent bracket and rear mounting slot.',
+        image: {
+          alt: 'Demo diffuser and transparent wall-mount bracket',
+          src: wallMountImage,
+        },
       },
     ],
     faqs: [
       {
-        question: 'Is this page ready to receive live customer orders?',
-        answer: 'No. This demo uses local mocks and temporary content. The approved ERP request contract and real product information are required before launch.',
+        question: 'Is this a live product offer?',
+        answer: 'No. The product photography, copy, prices and package IDs are demonstration content for reviewing the page design.',
       },
       {
-        question: 'What should be replaced before publishing?',
-        answer: 'Replace the demo wording, offer prices, product media, product facts, support details, delivery terms, and FAQ answers with approved information.',
+        question: 'What will be replaced before launch?',
+        answer: 'The final page needs approved product media, verified features, real offer IDs and prices, delivery terms, support details and the approved ERP request contract.',
+      },
+      {
+        question: 'Does this demo create an ERP order?',
+        answer: 'No. Development uses local mocks, and the packaged demonstration does not submit a live order.',
+      },
+    ],
+    orderSteps: [
+      {
+        title: 'Choose a package',
+        description: 'Select the single-set or two-set demonstration offer.',
+      },
+      {
+        title: 'Enter delivery details',
+        description: 'Complete the reusable customer and delivery fields.',
+      },
+      {
+        title: 'Review confirmation handling',
+        description: 'The live implementation will use the approved ERP success response.',
+      },
+      {
+        title: 'Replace demo fulfilment copy',
+        description: 'Add only approved delivery and payment terms before launch.',
       },
     ],
     cta: {
-      title: 'Inspect the order flow',
-      description: 'Choose a demo offer and view the reusable delivery-details form below.',
-      label: 'View demo order form',
+      title: 'Choose your diffuser demo package',
+      description: 'Review the package selection and customer delivery form below.',
+      label: 'Yes, show me the order form',
       href: '#order-form',
     },
   },
   media: {
-    gallery: [],
+    hero: {
+      alt: 'Demo rechargeable aroma diffuser with pink and blue ambient light',
+      src: heroImage,
+    },
+    gallery: [
+      {
+        alt: 'Rechargeable diffuser shown in a warm living room',
+        src: heroImage,
+      },
+      {
+        alt: 'Rechargeable diffuser glowing beside a bed',
+        src: bedroomImage,
+      },
+      {
+        alt: 'Rechargeable diffuser demonstrated with a wall-mount bracket',
+        src: wallMountImage,
+      },
+    ],
   },
   offers: [
     {
       id: 1,
-      label: 'Demo single offer',
+      label: '1 diffuser set',
       price: {
-        display: '₦0.00',
-        note: 'Demo only, not a live offer',
+        originalDisplay: 'NGN 35,000',
+        display: 'NGN 28,000',
+        note: 'Demo price only',
       },
-      contents: 'Temporary sample offer for reviewing form layout and validation.',
+      contents: '1 demo diffuser, 1 demo bottle and 1 wall bracket.',
+      status: 'placeholder',
+    },
+    {
+      id: 2,
+      label: '2 diffuser sets',
+      price: {
+        originalDisplay: 'NGN 70,000',
+        display: 'NGN 54,000',
+        note: 'Demo price only',
+      },
+      contents: '2 demo diffusers, 2 demo bottles and 2 wall brackets.',
       status: 'placeholder',
     },
   ],
@@ -77,19 +150,19 @@ export const product: ProductConfig = {
     gallery: true,
     benefits: true,
     demonstration: true,
-    video: true,
+    video: false,
     testimonials: false,
     faq: true,
     cta: true,
     orderForm: true,
   },
   theme: {
-    accent: 'oklch(0.52 0.19 25)',
+    accent: 'oklch(0.56 0.22 25)',
     accentForeground: 'oklch(0.99 0.005 75)',
-    canvas: 'oklch(0.98 0.007 80)',
-    ink: 'oklch(0.18 0.008 70)',
-    muted: 'oklch(0.5 0.012 70)',
-    surface: 'oklch(0.95 0.035 80)',
+    canvas: 'oklch(0.99 0.004 80)',
+    ink: 'oklch(0.17 0.01 40)',
+    muted: 'oklch(0.44 0.018 50)',
+    surface: 'oklch(0.96 0.035 84)',
   },
   isDemoContent: true,
   isPlaceholder: false,
